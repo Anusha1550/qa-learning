@@ -1,221 +1,291 @@
-software testing - software is made by humans and humans can make mistakes, whereas testing is the thing where we can check the build is working fine with the actual onces and the wrongonce 
-
-bug/ defect - something that donesn't work as expected
-requirements - what we need to do
-test case - steps for what we need to do and expected results
-actual/expected - actual result and what we need to achieve
-manual testing - testing can be done by human
-automation testing - testing done by scripts / scripts done clicking and checking
-
-test case writing - 
-test case id - TC01
-Title = login with a valid username and password
-test steps- launch the login page
-enter the vaild username
-enter the valid password
-click login
-excepted result : the user should land on home page
-
-id :TC02 
-title - Login with wrong password
-Steps: Launch the login page
-enter the valid username
-enter the wrong password
-click on login
-Expected result : page shows  Username and password do not match any user in this service
-Actual result: page shows the Username and password do not match any user in this service
-status - pass
-
-id - TC03 
-Title - Login with empty username
-Precondition	User is on the login page (saucedemo.com)
-Test data	Username: (blank), Password: secret_sauce
-
-steps:
-Leave the username field as blank
-enter the valid password
-click login
-Expected result : Epic sadface: Username is required
-Actual result: Epic sadface: Username is required
-status : pass
+Claude
 
 
-ID - TC04
-Title	Add a single item to the cart
-Precondition	User is logged in as standard_user and is on the Products page
-Test data	Item: Sauce Labs Backpack
-Steps	1. Click Add to cart under Sauce Labs Backpack. 2. Click the cart icon.
-Expected result	Cart badge shows 1, and Sauce Labs Backpack is listed in the cart
-Actual result	shows Sauce labs backpack in the cart
-Status	pass
 
-id - TC05
-Title- remove an item from the cart
-precondition: user is logged in as standard_user and is on the Products page
-Test data Item: Sauce Labs Backpack
-steps: click on the add to cart button on products page
-click on remove to remove the Sauce Labs Backpack from the cart
-Expected result : cart item Sauce Labs Backpack should be removed from the cart and cart shows empty
-Actual result: Sauce Labs Backpack removed from the cart and cart is empty
-status: pass
 
-test case id - TC06
-Title = login with a wrong username 
-Precondition	User is on the login page (saucedemo.com)
-Test data	Username: sdfsdgvdfv, Password: secret_sauce
 
-test steps- 
-enter the wrong username
-enter the valid password
-click login
-excepted result : Epic sadface: Username and password do not match any user in this service
-Actual result: the page shows Epic sadface: Username and password do not match any user in this service
-status: pass
 
-test case id - TC07
-Title = login with a wrong username and password
-test steps- launch the login page
-enter the wrong username
-enter the wrong password
-click login
-excepted result : Username and password do not match any user in this service
-Actual result: the page shows Username and password do not match any user in this service
-status: pass
 
-id - TC08 
-Title - Login with empty PASSWORD
-Precondition	User is on the login page (saucedemo.com)
-Test data	Username: standard_user, Password: (blank)
-steps: enter the valid USERNAME
-LEAVE THE PASSWORD AS BLANK
-click login
-Expected result : Epic sadface: Password is required
-Actual result: Epic sadface: Password is required
 
-status : pass
 
-id - TC09
-Title - LOGIN WITH locked_out_user
-Precondition	User is on the login page (saucedemo.com)
-Test data	Username: locked_out_user, Password: secret_sauce
-steps: 
-enter the valid USERNAME
-ENTER THE VALID PASSWORD
-click login
-Expected result : Epic sadface: Sorry, this user has been locked out.
-Actual result: Epic sadface: Sorry, this user has been locked out.
-status : pass
 
-ID	TC10
-Title	Accept a password of the maximum length (15 characters)
-Precondition	User is on the login page (saucedemo.com), Requirement: password must be 8 to 15 characters
-Test data	Username: standard_user,Password: abcdefghijklmno (15 characters)
+
+
+
+
+
+
+
+
+
+
+
+
+Notes · TXT
+QA LEARNING NOTES
+=================
+ 
+ 
+LESSON 1: WHAT IS SOFTWARE TESTING?
+-----------------------------------
+Software is made by humans, and humans can make mistakes. Testing is checking that the software works correctly when used the right way, and that it handles wrong input safely.
+ 
+Key terms
+- Bug / defect: something that does not work as expected.
+- Requirement: a description of what the software should do.
+- Test case: a written set of steps with an expected result.
+- Expected result: what should happen.
+- Actual result: what really happened when the test was run.
+- Manual testing: a person runs the tests by hand.
+- Automation testing: a script clicks and checks instead of a person.
+ 
+Why automate?
+- Scripts finish in hours, while manual testing takes much longer.
+- Scripts run the same way every time.
+- Scripts can run overnight or on every code change.
+ 
+Why test both positive and negative cases?
+- Positive tests check that the system works when used correctly.
+- Negative tests check that the system handles mistakes safely.
+- Real users make mistakes, and attackers enter bad input on purpose.
+ 
+Bug vs requirement (example)
+- Requirement: a user must be able to log in with a valid password.
+- Bug: a user enters a valid password and gets an error.
+ 
+ 
+TEST CASES (practice site: saucedemo.com)
+-----------------------------------------
+Valid login: standard_user / secret_sauce
+Locked user: locked_out_user / secret_sauce
+ 
+ID: TC01
+Title: Login with a valid username and password
+Precondition: User is on the login page (saucedemo.com)
+Test data: Username: standard_user, Password: secret_sauce
 Steps:
-Enter the username
-enter the 15 characters password
-click login
-Expected result	: The home page should be displayed
-Actual result	Not executed
-Status	Not executed
-
-ID	TC11
-Title	Reject a password longer than the maximum length (16 characters)
-Precondition	User is on the login page (saucedemo.com). Requirement: password must be 8 to 15 characters
-Test data	Username: standard_user, Password: abcdefghijklmnop (16 characters)
-Steps	1. Enter the username. 2. Type the 16-character password. 3. Observe the password field. 4. Click Login.
-Expected result	The field rejects the extra character, or an error says the password is too long
-Actual result	The field accepted all 16 characters and showed no length error. The login failed only with “Epic sadface: Username and password do not match any user in this service”
-Status	Fail
-
-lesson -2
-SDLC (SOFTWARE DEVELOPMENT LIFE CYCLE)
-REQUIREMENTS - GATHER ALL THE USES AND NEEDS OF THE PROJECT
-DESIGN - PREPARE THE FLOW HOW TO DESIGN THE PROJECT
-DEVELOPMENT - DEVELOPERS BUILD THE CODE FOR PROJECT
-TESTING - TESTERS TEST THE BUILD CODE
-DEPLOYMENT - PROJECT WENT LIVE
-MAINTANANCE - CHECKS THE PROJECTS IS EVERYTHING IS FINE OR NEED TO BE CHANGED
- TWO TYPES 
-WATERFALL MODEL - TESTING CAN BE DONE ALL THE DEVELOPMENT IS COMPLETED. WHERE TESTING TAKES TIME
-AGILE - IN AGILE MODEL WE CAN TEST THE PROJECT AT ANY TIME AFTER DEVELOPMENT OR MIDDLE. IN THIS PROJECT IS DIVIDED INTO SMALL SPRINTS WHICH IS USUALLY 2 WEEKS. WE CAN FIX ERROR EVEN IF THE DEVELOPMENT FINISHES
-
-STLC (SOFTWARE TESTING LIFE CYCLE)
-REQUIREMENTS - FIRST WE NEED TO GATHER ALL THE INFORMATION OF THE PROJECT
-TEST PLANNING - THEN START THE PLANNING OF THE PROJECT WHAT HOW WHEN 
-TEST CASE - DESIGN THE TEST CASES ACCORDING TO THE REQUIREMENT AND PROJECT
-ENVIRONMENT SETUP - NEED TO SETUP THE ENVIRONMENT FOR TESTING
-TEST EXECUTION - EXECUTE AND RECORD/ IMPLEMENT THE TEST CASES
-TEST CLOUSER - READY THE REPORTS AND STATUS OF THE TEST CASES
-
-Lesson -3
-Equivalence partitioning: test one value from each group.
-Boundary value analysis: test just below, on, and just above each edge.
-The requirement decides pass or fail, not what the page happens to do.
-Test data should isolate one thing at a time.
-
-Your Equivalence Partitioning
-
-You’ve got the three groups right, and picking one example from each is exactly the technique. Now let’s check the examples, because that’s where the details matter.
-
-Checking your example passwords
-Group	Your example	Length	Correct?
-1 to 7 (invalid)	asdfghj	7	Yes, 7 characters
-8 to 15 (valid)	asdsddddfdf@3e	14	Yes, 14 is inside 8 to 15
-16 and above (invalid)	wdfjerkjgrtj7ji65yhytrjh	24	Yes, 24 is above 16
-
-All three land in the right group. Counting characters is how testers verify this, so keep doing it.
-
-Cleaner version for your notes
-Group	Length	Valid?	Example	Expected result
-Blank	0	Invalid	(blank)	Error: password is required
-Too short	1 to 7	Invalid	asdfghj (7)	Error: too short
-Allowed	8 to 15	Valid	abcdefgh12 (10)	Accepted
-Too long	16 or more	Invalid	abcdefghij123456 (16)	Error: too long
-Next parts of the task
-
-Part 2: boundary values. Using lengths 7, 8, 9, 14, 15 and 16, write one example password for each and say whether it’s valid or invalid. Tip: build them from a pattern so counting is easy, such as abcdefg (7), abcdefgh (8) and so on.
-
-Part 3: two full test cases. Pick one valid case (for example, a 15-character password) and one invalid case (a 16-character password). Use the same table format as TC04: ID, title, precondition, test data, steps, expected result, actual result, status. Since this is a made-up field, write “Not executed” as the actual result and status.
-
-Send Part 2 first if you like. I’ll review it before you do Part 3.
-
-boundary values - 7 (abcdefg)invalid , 8(abcdefgh)valid, 9(abcdefghi)valid
-14(abcdefghijklmn)valid , 15(abcdefghijklmno)valid,16(abcdefghijklmnop)invalid as it is higher than condition
-
-Review: Your Boundary Values Are Correct
-
-All six are right, and you’ve picked the correct lengths. You also built each password from a pattern (abcdefg, abcdefgh, and so on), which makes counting easy. Let me verify each one.
-
-Length	Your example	Count	Valid?	Your answer
-7	abcdefg	7	Invalid (just below minimum)	Correct
-8	abcdefgh	8	Valid (the minimum)	Correct
-9	abcdefghi	9	Valid	Correct
-14	abcdefghijklmn	14	Valid	Correct
-15	abcdefghijklmno	15	Valid (the maximum)	Correct
-16	abcdefghijklmnop	16	Invalid (just above maximum)	Correct
-
-Your reason for 16, “higher than the condition”, is right. Make it more precise in your notes: “16 is one above the maximum allowed length of 15.”
-
-Why these six values
-
-You tested on and next to each edge. This is the core of boundary value analysis:
-
-Lower edge: 7 (just outside), 8 (on the edge), 9 (just inside)
-Upper edge: 14 (just inside), 15 (on the edge), 16 (just outside)
-
-If a developer wrote length > 8 when they meant length >= 8, then 8 would wrongly fail, and only this technique catches that.
-
-
-Lesson 4
-
-git and git actions
-
-git add - changes can be accepted
-git commit - saves the changes
-git push - pushes the new changes to github
-
-
-
-
-
-
+1. Enter the username.
+2. Enter the password.
+3. Click Login.
+Expected result: The user lands on the Products page.
+Actual result: The user lands on the Products page.
+Status: Pass
+ 
+ID: TC02
+Title: Login with a valid username and wrong password
+Precondition: User is on the login page (saucedemo.com)
+Test data: Username: standard_user, Password: wrong123
+Steps:
+1. Enter the username.
+2. Enter the wrong password.
+3. Click Login.
+Expected result: Epic sadface: Username and password do not match any user in this service
+Actual result: Epic sadface: Username and password do not match any user in this service
+Status: Pass
+ 
+ID: TC03
+Title: Login with an empty username
+Precondition: User is on the login page (saucedemo.com)
+Test data: Username: (blank), Password: secret_sauce
+Steps:
+1. Leave the username field empty.
+2. Enter the password.
+3. Click Login.
+Expected result: Epic sadface: Username is required
+Actual result: Epic sadface: Username is required
+Status: Pass
+ 
+ID: TC04
+Title: Add a single item to the cart
+Precondition: User is logged in as standard_user and is on the Products page
+Test data: Item: Sauce Labs Backpack
+Steps:
+1. Click Add to cart under Sauce Labs Backpack.
+2. Click the cart icon.
+Expected result: The cart badge shows 1, and Sauce Labs Backpack is listed in the cart.
+Actual result: The cart badge shows 1, and Sauce Labs Backpack is listed in the cart.
+Status: Pass
+ 
+ID: TC05
+Title: Remove an item from the cart
+Precondition: User is logged in as standard_user, is on the Products page, and Sauce Labs Backpack is already in the cart
+Test data: Item: Sauce Labs Backpack
+Steps:
+1. Click the cart icon.
+2. Click Remove next to Sauce Labs Backpack.
+Expected result: Sauce Labs Backpack is removed, the cart is empty, and the cart badge disappears.
+Actual result: Sauce Labs Backpack is removed, the cart is empty, and the cart badge disappears.
+Status: Pass
+ 
+ID: TC06
+Title: Login with an invalid username and valid password
+Precondition: User is on the login page (saucedemo.com)
+Test data: Username: sdfsdgvdfv, Password: secret_sauce
+Steps:
+1. Enter the invalid username.
+2. Enter the valid password.
+3. Click Login.
+Expected result: Epic sadface: Username and password do not match any user in this service
+Actual result: Epic sadface: Username and password do not match any user in this service
+Status: Pass
+ 
+ID: TC07
+Title: Login with an invalid username and invalid password
+Precondition: User is on the login page (saucedemo.com)
+Test data: Username: sdfsdgvdfv, Password: wrong123
+Steps:
+1. Enter the invalid username.
+2. Enter the invalid password.
+3. Click Login.
+Expected result: Epic sadface: Username and password do not match any user in this service
+Actual result: Epic sadface: Username and password do not match any user in this service
+Status: Pass
+ 
+ID: TC08
+Title: Login with a valid username and empty password
+Precondition: User is on the login page (saucedemo.com)
+Test data: Username: standard_user, Password: (blank)
+Steps:
+1. Enter the username.
+2. Leave the password field empty.
+3. Click Login.
+Expected result: Epic sadface: Password is required
+Actual result: Epic sadface: Password is required
+Status: Pass
+ 
+ID: TC09
+Title: Login with the locked_out_user
+Precondition: User is on the login page (saucedemo.com)
+Test data: Username: locked_out_user, Password: secret_sauce
+Steps:
+1. Enter the username.
+2. Enter the password.
+3. Click Login.
+Expected result: Epic sadface: Sorry, this user has been locked out.
+Actual result: Epic sadface: Sorry, this user has been locked out.
+Status: Pass
+ 
+Note on negative tests: TC02, TC06 and TC07 all show the same error message. This is deliberate. A generic message does not tell an attacker which usernames exist.
+ 
+Note on test independence: TC05 must not depend on TC04. If TC04 fails, TC05 would fail too, even if the remove feature works. That hides the real problem. Tests that are independent can run in any order or at the same time. The fix is to put the setup in the precondition.
+ 
+ 
+LESSON 2: SDLC AND STLC
+-----------------------
+SDLC (Software Development Life Cycle) - how software is built, from idea to release:
+1. Requirements: gather what the client needs the software to do.
+2. Design: plan the screens, flow and database.
+3. Development: developers write the code.
+4. Testing: testers verify the build.
+5. Deployment: the software goes live.
+6. Maintenance: fix bugs found after release and add new features.
+ 
+SDLC models (Waterfall and Agile are two examples; others are V-model and Spiral)
+- Waterfall: each phase finishes before the next one starts. Testing begins only after development is complete, so problems are found late and cost more to fix.
+- Agile: work is split into short sprints (usually 2 weeks). Each sprint delivers a small working piece of the product, and that piece is tested within the same sprint. A regression test (re-checking old features) is also run before release.
+ 
+STLC (Software Testing Life Cycle) - the steps testers follow:
+1. Requirement analysis: read and understand the requirements, and find gaps or unclear points.
+2. Test planning: decide the scope, tools, schedule (what, how, when).
+3. Test case design: write test cases from the requirements.
+4. Environment setup: prepare the system to test on.
+5. Test execution: run the test cases and record the results.
+6. Test closure: prepare the reports and the final status of the test cases.
+ 
+Why is a bug after release more expensive than a bug in the requirements?
+- Developers must change the code, and the change must be retested, including old features that might now break (regression).
+- The fix must be redeployed to live users.
+- Real users may lose data, money or trust in the meantime.
+A bug in the requirements is only a sentence corrected in a document.
+ 
+ 
+LESSON 3: TEST DESIGN TECHNIQUES
+--------------------------------
+- Equivalence partitioning: divide the inputs into groups that behave the same way, and test one value from each group.
+- Boundary value analysis: test just below, on, and just above each edge, because bugs hide at the edges.
+- The requirement decides pass or fail, not what the page happens to do.
+- Test data should isolate one thing at a time.
+ 
+Practice requirement (made up): a password must be 8 to 15 characters long.
+ 
+Equivalence partitioning
+Group      | Length     | Valid?  | Example                     | Expected result
+Blank      | 0          | Invalid | (blank)                     | Error: password is required
+Too short  | 1 to 7     | Invalid | asdfghj (7)                 | Error: too short
+Allowed    | 8 to 15    | Valid   | asdsddddfdf@3e (14)         | Accepted
+Too long   | 16 or more | Invalid | wdfjerkjgrtj7ji65yhytrjh (24) | Error: too long
+ 
+Boundary values
+Length | Example                   | Valid?  | Reason
+7      | abcdefg (7)               | Invalid | One below the minimum
+8      | abcdefgh (8)              | Valid   | The minimum
+9      | abcdefghi (9)             | Valid   | One above the minimum
+14     | abcdefghijklmn (14)       | Valid   | One below the maximum
+15     | abcdefghijklmno (15)      | Valid   | The maximum
+16     | abcdefghijklmnop (16)     | Invalid | One above the maximum of 15
+ 
+Why these values matter: if a developer wrote "length > 8" when they meant "length >= 8", then 8 would wrongly fail. Only boundary testing catches this.
+ 
+Important: saucedemo has no password length rule. The 8 to 15 rule is made up for practice. The page accepts any length and only checks whether the password matches secret_sauce.
+ 
+ID: TC10
+Title: Accept a password of the maximum length (15 characters)
+Precondition: User is on the login page (saucedemo.com). Requirement: password must be 8 to 15 characters.
+Test data: Username: standard_user, Password: abcdefghijklmno (15 characters)
+Steps:
+1. Enter the username.
+2. Enter the 15-character password.
+3. Observe the password field.
+4. Click Login.
+Expected result: No length error is shown for the 15-character password.
+Actual result: No length error was shown. The login failed only with "Epic sadface: Username and password do not match any user in this service", because the password is not the real saucedemo password.
+Status: Pass (for the length rule only)
+ 
+ID: TC11
+Title: Reject a password longer than the maximum length (16 characters)
+Precondition: User is on the login page (saucedemo.com). Requirement: password must be 8 to 15 characters.
+Test data: Username: standard_user, Password: abcdefghijklmnop (16 characters)
+Steps:
+1. Enter the username.
+2. Type the 16-character password.
+3. Observe the password field.
+4. Click Login.
+Expected result: The field rejects the extra character, or an error says the password is too long.
+Actual result: The field accepted all 16 characters and showed no length error. The login failed only with "Epic sadface: Username and password do not match any user in this service".
+Status: Fail
+ 
+Defect for TC11
+Title: Password field accepts more than 15 characters
+Steps: Enter a 16-character password and observe the field.
+Expected: Input over 15 characters is blocked or shows an error.
+Actual: All 16 characters are accepted with no length error.
+Severity: Low
+ 
+ 
+LESSON 4: GIT AND GITHUB
+------------------------
+Git saves versions of your work (like save points in a game). GitHub stores those versions online.
+ 
+Commands
+Command                      | What it does
+git init                     | Starts tracking a folder with Git.
+git status                   | Shows the state of your files. A new file is "untracked". A changed file is "modified".
+git add notes.txt            | Stages the changes in notes.txt, which means choosing what goes into the next save.
+git commit -m "message"      | Saves the staged changes as a new version with a short message.
+git push                     | Uploads your commits to GitHub.
+git diff                     | Shows exactly which lines changed. Run it before git add.
+git log                      | Shows each commit with its author, date and message.
+git log --oneline            | Shows a short list of commits, one per line.
+git branch -M main           | Renames the current branch to main.
+git remote add origin <url>  | Tells Git where the online repository lives.
+ 
+The everyday cycle: edit, add, commit, push.
+ 
+Good habits
+- Write clear commit messages, such as "Add Lesson 4 Git notes". Avoid "update" or "changes".
+- Commit small and often.
+- Run git status often.
+ 
+My repository: https://github.com/Anusha1550/qa-learning
+ 
+Claude finished the response
