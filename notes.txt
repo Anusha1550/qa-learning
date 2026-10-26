@@ -261,5 +261,10 @@ Good habits
 - Write clear commit messages, such as "Add Lesson 4 Git notes". Avoid "update" or "changes".
 - Commit small and often.
 - Run git status often.
- 
+
+LESSON 5: BRANCHES
+------------------
+git add notes.txt
+git commit -m "Add Lesson 5 branch notes"
+git checkout main
 
