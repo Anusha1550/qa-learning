@@ -106,9 +106,28 @@ Expected result : Epic sadface: Sorry, this user has been locked out.
 Actual result: Epic sadface: Sorry, this user has been locked out.
 status : pass
 
+ID	TC10
+Title	Accept a password of the maximum length (15 characters)
+Precondition	User is on the login page (saucedemo.com), Requirement: password must be 8 to 15 characters
+Test data	Username: standard_user,Password: abcdefghijklmno (15 characters)
+Steps:
+Enter the username
+enter the 15 characters password
+click login
+Expected result	: The home page should be displayed
+Actual result	Not executed
+Status	Not executed
 
+ID	TC11
+Title	Reject a password longer than the maximum length (16 characters)
+Precondition	User is on the login page (saucedemo.com). Requirement: password must be 8 to 15 characters
+Test data	Username: standard_user, Password: abcdefghijklmnop (16 characters)
+Steps	1. Enter the username. 2. Type the 16-character password. 3. Observe the password field. 4. Click Login.
+Expected result	The field rejects the extra character, or an error says the password is too long
+Actual result	The field accepted all 16 characters and showed no length error. The login failed only with “Epic sadface: Username and password do not match any user in this service”
+Status	Fail
 
-
+lesson -2
 SDLC (SOFTWARE DEVELOPMENT LIFE CYCLE)
 REQUIREMENTS - GATHER ALL THE USES AND NEEDS OF THE PROJECT
 DESIGN - PREPARE THE FLOW HOW TO DESIGN THE PROJECT
@@ -127,6 +146,76 @@ TEST CASE - DESIGN THE TEST CASES ACCORDING TO THE REQUIREMENT AND PROJECT
 ENVIRONMENT SETUP - NEED TO SETUP THE ENVIRONMENT FOR TESTING
 TEST EXECUTION - EXECUTE AND RECORD/ IMPLEMENT THE TEST CASES
 TEST CLOUSER - READY THE REPORTS AND STATUS OF THE TEST CASES
+
+Lesson -3
+Equivalence partitioning: test one value from each group.
+Boundary value analysis: test just below, on, and just above each edge.
+The requirement decides pass or fail, not what the page happens to do.
+Test data should isolate one thing at a time.
+
+Your Equivalence Partitioning
+
+You’ve got the three groups right, and picking one example from each is exactly the technique. Now let’s check the examples, because that’s where the details matter.
+
+Checking your example passwords
+Group	Your example	Length	Correct?
+1 to 7 (invalid)	asdfghj	7	Yes, 7 characters
+8 to 15 (valid)	asdsddddfdf@3e	14	Yes, 14 is inside 8 to 15
+16 and above (invalid)	wdfjerkjgrtj7ji65yhytrjh	24	Yes, 24 is above 16
+
+All three land in the right group. Counting characters is how testers verify this, so keep doing it.
+
+Cleaner version for your notes
+Group	Length	Valid?	Example	Expected result
+Blank	0	Invalid	(blank)	Error: password is required
+Too short	1 to 7	Invalid	asdfghj (7)	Error: too short
+Allowed	8 to 15	Valid	abcdefgh12 (10)	Accepted
+Too long	16 or more	Invalid	abcdefghij123456 (16)	Error: too long
+Next parts of the task
+
+Part 2: boundary values. Using lengths 7, 8, 9, 14, 15 and 16, write one example password for each and say whether it’s valid or invalid. Tip: build them from a pattern so counting is easy, such as abcdefg (7), abcdefgh (8) and so on.
+
+Part 3: two full test cases. Pick one valid case (for example, a 15-character password) and one invalid case (a 16-character password). Use the same table format as TC04: ID, title, precondition, test data, steps, expected result, actual result, status. Since this is a made-up field, write “Not executed” as the actual result and status.
+
+Send Part 2 first if you like. I’ll review it before you do Part 3.
+
+boundary values - 7 (abcdefg)invalid , 8(abcdefgh)valid, 9(abcdefghi)valid
+14(abcdefghijklmn)valid , 15(abcdefghijklmno)valid,16(abcdefghijklmnop)invalid as it is higher than condition
+
+Review: Your Boundary Values Are Correct
+
+All six are right, and you’ve picked the correct lengths. You also built each password from a pattern (abcdefg, abcdefgh, and so on), which makes counting easy. Let me verify each one.
+
+Length	Your example	Count	Valid?	Your answer
+7	abcdefg	7	Invalid (just below minimum)	Correct
+8	abcdefgh	8	Valid (the minimum)	Correct
+9	abcdefghi	9	Valid	Correct
+14	abcdefghijklmn	14	Valid	Correct
+15	abcdefghijklmno	15	Valid (the maximum)	Correct
+16	abcdefghijklmnop	16	Invalid (just above maximum)	Correct
+
+Your reason for 16, “higher than the condition”, is right. Make it more precise in your notes: “16 is one above the maximum allowed length of 15.”
+
+Why these six values
+
+You tested on and next to each edge. This is the core of boundary value analysis:
+
+Lower edge: 7 (just outside), 8 (on the edge), 9 (just inside)
+Upper edge: 14 (just inside), 15 (on the edge), 16 (just outside)
+
+If a developer wrote length > 8 when they meant length >= 8, then 8 would wrongly fail, and only this technique catches that.
+
+
+Lesson 4
+
+git and git actions
+
+git add - changes can be accepted
+git commit - saves the changes
+git push - pushes the new changes to github
+
+
+
 
 
 
