@@ -1,0 +1,132 @@
+software testing - software is made by humans and humans can make mistakes, whereas testing is the thing where we can check the build is working fine with the actual onces and the wrongonce 
+
+bug/ defect - something that donesn't work as expected
+requirements - what we need to do
+test case - steps for what we need to do and expected results
+actual/expected - actual result and what we need to achieve
+manual testing - testing can be done by human
+automation testing - testing done by scripts / scripts done clicking and checking
+
+test case writing - 
+test case id - TC01
+Title = login with a valid username and password
+test steps- launch the login page
+enter the vaild username
+enter the valid password
+click login
+excepted result : the user should land on home page
+
+id :TC02 
+title - Login with wrong password
+Steps: Launch the login page
+enter the valid username
+enter the wrong password
+click on login
+Expected result : page shows  Username and password do not match any user in this service
+Actual result: page shows the Username and password do not match any user in this service
+status - pass
+
+id - TC03 
+Title - Login with empty username
+Precondition	User is on the login page (saucedemo.com)
+Test data	Username: (blank), Password: secret_sauce
+
+steps:
+Leave the username field as blank
+enter the valid password
+click login
+Expected result : Epic sadface: Username is required
+Actual result: Epic sadface: Username is required
+status : pass
+
+
+ID - TC04
+Title	Add a single item to the cart
+Precondition	User is logged in as standard_user and is on the Products page
+Test data	Item: Sauce Labs Backpack
+Steps	1. Click Add to cart under Sauce Labs Backpack. 2. Click the cart icon.
+Expected result	Cart badge shows 1, and Sauce Labs Backpack is listed in the cart
+Actual result	shows Sauce labs backpack in the cart
+Status	pass
+
+id - TC05
+Title- remove an item from the cart
+precondition: user is logged in as standard_user and is on the Products page
+Test data Item: Sauce Labs Backpack
+steps: click on the add to cart button on products page
+click on remove to remove the Sauce Labs Backpack from the cart
+Expected result : cart item Sauce Labs Backpack should be removed from the cart and cart shows empty
+Actual result: Sauce Labs Backpack removed from the cart and cart is empty
+status: pass
+
+test case id - TC06
+Title = login with a wrong username 
+Precondition	User is on the login page (saucedemo.com)
+Test data	Username: sdfsdgvdfv, Password: secret_sauce
+
+test steps- 
+enter the wrong username
+enter the valid password
+click login
+excepted result : Epic sadface: Username and password do not match any user in this service
+Actual result: the page shows Epic sadface: Username and password do not match any user in this service
+status: pass
+
+test case id - TC07
+Title = login with a wrong username and password
+test steps- launch the login page
+enter the wrong username
+enter the wrong password
+click login
+excepted result : Username and password do not match any user in this service
+Actual result: the page shows Username and password do not match any user in this service
+status: pass
+
+id - TC08 
+Title - Login with empty PASSWORD
+Precondition	User is on the login page (saucedemo.com)
+Test data	Username: standard_user, Password: (blank)
+steps: enter the valid USERNAME
+LEAVE THE PASSWORD AS BLANK
+click login
+Expected result : Epic sadface: Password is required
+Actual result: Epic sadface: Password is required
+
+status : pass
+
+id - TC09
+Title - LOGIN WITH locked_out_user
+Precondition	User is on the login page (saucedemo.com)
+Test data	Username: locked_out_user, Password: secret_sauce
+steps: 
+enter the valid USERNAME
+ENTER THE VALID PASSWORD
+click login
+Expected result : Epic sadface: Sorry, this user has been locked out.
+Actual result: Epic sadface: Sorry, this user has been locked out.
+status : pass
+
+
+
+
+SDLC (SOFTWARE DEVELOPMENT LIFE CYCLE)
+REQUIREMENTS - GATHER ALL THE USES AND NEEDS OF THE PROJECT
+DESIGN - PREPARE THE FLOW HOW TO DESIGN THE PROJECT
+DEVELOPMENT - DEVELOPERS BUILD THE CODE FOR PROJECT
+TESTING - TESTERS TEST THE BUILD CODE
+DEPLOYMENT - PROJECT WENT LIVE
+MAINTANANCE - CHECKS THE PROJECTS IS EVERYTHING IS FINE OR NEED TO BE CHANGED
+ TWO TYPES 
+WATERFALL MODEL - TESTING CAN BE DONE ALL THE DEVELOPMENT IS COMPLETED. WHERE TESTING TAKES TIME
+AGILE - IN AGILE MODEL WE CAN TEST THE PROJECT AT ANY TIME AFTER DEVELOPMENT OR MIDDLE. IN THIS PROJECT IS DIVIDED INTO SMALL SPRINTS WHICH IS USUALLY 2 WEEKS. WE CAN FIX ERROR EVEN IF THE DEVELOPMENT FINISHES
+
+STLC (SOFTWARE TESTING LIFE CYCLE)
+REQUIREMENTS - FIRST WE NEED TO GATHER ALL THE INFORMATION OF THE PROJECT
+TEST PLANNING - THEN START THE PLANNING OF THE PROJECT WHAT HOW WHEN 
+TEST CASE - DESIGN THE TEST CASES ACCORDING TO THE REQUIREMENT AND PROJECT
+ENVIRONMENT SETUP - NEED TO SETUP THE ENVIRONMENT FOR TESTING
+TEST EXECUTION - EXECUTE AND RECORD/ IMPLEMENT THE TEST CASES
+TEST CLOUSER - READY THE REPORTS AND STATUS OF THE TEST CASES
+
+
+
