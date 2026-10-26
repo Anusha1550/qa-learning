@@ -1,27 +1,3 @@
-Claude
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Notes · TXT
 QA LEARNING NOTES
 =================
  
@@ -286,6 +262,4 @@ Good habits
 - Commit small and often.
 - Run git status often.
  
-My repository: https://github.com/Anusha1550/qa-learning
- 
-Claude finished the response
+
