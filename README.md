@@ -10,6 +10,7 @@ I am learning test automation from the beginning.
 - Equivalence partitioning and boundary value analysis
 - SDLC and STLC
 - Git and GitHub basics
+- Git branches and merging
 
 ## Practice site
 - saucedemo.com
