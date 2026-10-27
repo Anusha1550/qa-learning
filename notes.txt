@@ -421,4 +421,29 @@ This matches my Lesson 3 boundary table.
 Why loops matter for testing
 One loop can run the same check on many test inputs without editing the file each time.
 
+LESSON 11: OBJECTS AND AN ARRAY OF OBJECTS
+------------------------------------------
+An object describes one thing with named properties, inside { }.
+const testCase = { id: "TC10", password: "abcdefghijklmno", expected: "Valid" };
+I read a property by name: testCase.password.
+
+An array is a list of values, found by position number: lengths[4].
+An object is found by name: testCase.password.
+Commas separate the items in both.
+
+Array of objects
+A list of test cases, where each test case is an object with an id, test data and an expected result.
+for (const test of tests) takes one object at a time.
+
+let actual;
+Makes a variable that gets its value later, inside the if or else. It uses let because the value changes.
+
+My test runner (tests.js)
+It works out the actual result, compares it with test.expected, and prints Pass or Fail.
+All six boundary tests passed.
+
+Experiment
+I changed BV05 to expect Invalid. It printed Fail, because the actual result was Valid.
+A Fail does not say which side is wrong. The requirement decides whether the code or the expected value is wrong.
+
 
