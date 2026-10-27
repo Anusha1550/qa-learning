@@ -379,3 +379,18 @@ Results for my boundary values
 The code matches my Lesson 3 boundary table.
 
 Lesson: one small symbol (<= vs <) changes the result at the edge, so testers always check boundary values.
+
+LESSON 10: ARRAYS
+-----------------
+An array is a list of values inside [ ], separated by commas.
+const lengths = [7, 8, 9, 14, 15, 16];
+const testIds = ["TC01", "TC02", "TC03"];
+
+Index starts at 0, not 1.
+lengths[0] is the first item (7).
+lengths[4] is the fifth item (15).
+lengths.length is the number of items (6).
+The last item is lengths[lengths.length - 1], because the last index is one less than the length.
+
+Why arrays matter for testing
+Test data is often a list of values. An array lets me keep all of them together and check each one.
