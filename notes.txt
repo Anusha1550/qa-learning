@@ -394,3 +394,31 @@ The last item is lengths[lengths.length - 1], because the last index is one less
 
 Why arrays matter for testing
 Test data is often a list of values. An array lets me keep all of them together and check each one.
+
+LESSON 10 (PART 2): LOOPS
+-------------------------
+A for...of loop repeats the code inside { } once for every item in a list.
+for (const password of passwords) {
+  console.log(password);
+}
+The variable (password) holds the current item each time.
+All the code inside { } runs for every item.
+The loop does not check a condition by itself. An if inside the loop makes the decision.
+
+Loop plus if/else (boundary.js)
+for (const password of passwords) {
+  const length = password.length;
+  if (length >= 8 && length <= 15) {
+    console.log(`${length} characters: Valid`);
+  } else {
+    console.log(`${length} characters: Invalid`);
+  }
+}
+
+Result: 7 = Invalid, 8 = Valid, 9 = Valid, 14 = Valid, 15 = Valid, 16 = Invalid.
+This matches my Lesson 3 boundary table.
+
+Why loops matter for testing
+One loop can run the same check on many test inputs without editing the file each time.
+
+
