@@ -327,3 +327,30 @@ Habits
 - Check the folder in the prompt before running a command.
 - Each command goes on its own line.
 - File names must match exactly (variable.js is not the same as variables.js).
+
+LESSON 8: COMPARING VALUES AND IF/ELSE
+--------------------------------------
+A single = assigns (stores) a value.
+Three === compare two values and give true or false.
+!== means not equal.
+=== compares every character, including capital letters and spaces.
+
+Example (compare.js)
+const expected = "Epic sadface: Password is required";
+const actual = "Epic sadface: Password is required";
+console.log(expected === actual);   // true
+
+if and else
+if (expected === actual) {
+  console.log("Status: Pass");
+} else {
+  console.log("Status: Fail");
+}
+The if part runs when the condition is true.
+The else part runs when the condition is false.
+Conditions go inside ( ). Code to run goes inside { }.
+Every { needs a closing }.
+
+Link to testing
+A test compares the expected result with the actual result.
+If they match, the test passes. If not, it fails.
