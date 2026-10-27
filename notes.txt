@@ -302,4 +302,28 @@ Pull request flow
 4. Merge it, then delete the branch.
 5. On my computer: git checkout main, then git pull.
 
-LESSON -6 
+LESSON 6: JAVASCRIPT AND NODE.JS BASICS
+---------------------------------------
+JavaScript is the programming language I will use for Playwright test scripts.
+Node.js is a program that lets me run JavaScript on my computer, outside a browser.
+LTS means Long Term Support. It is the stable version to install.
+
+Installing and checking
+node --version     - shows the installed version (mine: v24.11.0)
+If the terminal says "not recognized", close all terminals and open a new one.
+
+Running a program
+1. Create a file with the .js extension, for example hello.js.
+2. Move into the folder with cd, and check that the prompt shows the right folder.
+3. Run it with: node hello.js
+
+console.log("text") prints a message in the terminal. I use it to see what my code is doing.
+
+First program (hello.js)
+console.log("Hello, I am learning JavaScript");
+Output: Hello, I am learning JavaScript
+
+Habits
+- Check the folder in the prompt before running a command.
+- Each command goes on its own line.
+- File names must match exactly (variable.js is not the same as variables.js).
