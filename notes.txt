@@ -264,7 +264,34 @@ Good habits
 
 LESSON 5: BRANCHES
 ------------------
-git add notes.txt
-git commit -m "Add Lesson 5 branch notes"
-git checkout main
+LESSON 5: GIT BRANCHES
+----------------------
+A branch is a separate copy of the work where I can make changes without affecting main.
+Main is the stable copy and should always work.
+Merging copies the finished changes from a branch into main.
+
+Why teams use branches
+- Unfinished or broken changes do not affect main.
+- Many people can work at the same time without overwriting each other.
+- Work is merged into main only after it is finished and reviewed.
+
+Commands
+git branch                     - lists branches. The one with * is the current branch.
+git checkout -b branch-name    - creates a new branch and moves onto it.
+git checkout main              - moves back to main.
+git merge branch-name          - brings the branch's changes into the current branch.
+git branch -d branch-name      - deletes a branch after it is merged.
+
+Steps
+1. Create a branch.
+2. Make changes, then git add and git commit.
+3. Switch to main.
+4. Merge the branch.
+5. Push main to GitHub.
+
+Pull request (PR)
+A pull request is a request on GitHub to merge a branch into main. A teammate can review the changes first. After the review, the PR is merged.
+
+Fast-forward merge
+If main has no new commits while I work on the branch, Git simply moves main forward to the branch's latest commit. No extra merge commit is made. 
 
