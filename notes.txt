@@ -354,3 +354,28 @@ Every { needs a closing }.
 Link to testing
 A test compares the expected result with the actual result.
 If they match, the test passes. If not, it fails.
+
+LESSON 9: CHECKING A PASSWORD LENGTH
+------------------------------------
+.length gives the number of characters in a text.
+>= means greater than or equal to. <= means less than or equal to.
+&& means AND. Both conditions must be true.
+
+Example (password.js)
+const password = "abcdefgh";
+const length = password.length;
+if (length >= 8 && length <= 15) {
+  console.log(`Valid: ${length} characters`);
+} else {
+  console.log(`Invalid: ${length} characters`);
+}
+
+Why &&
+The rule has two limits: minimum 8 and maximum 15.
+Checking only length >= 8 would wrongly accept a 16-character password.
+
+Results for my boundary values
+7 = Invalid, 8 = Valid, 9 = Valid, 14 = Valid, 15 = Valid, 16 = Invalid.
+The code matches my Lesson 3 boundary table.
+
+Lesson: one small symbol (<= vs <) changes the result at the edge, so testers always check boundary values.
